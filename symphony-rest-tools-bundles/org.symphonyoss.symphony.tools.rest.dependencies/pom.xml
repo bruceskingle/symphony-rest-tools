@@ -8,7 +8,20 @@
   <artifactId>org.symphonyoss.symphony.tools.rest.dependencies</artifactId>
   <packaging>eclipse-plugin</packaging>
   
+  <properties>
+  		<s2.common.version>1.0.5-SNAPSHOT</s2.common.version>
+  </properties>
   <dependencies>
+		<dependency>
+      <groupId>org.symphonyoss.s2.common</groupId>
+      <artifactId>S2-common-core</artifactId>
+      <version>${s2.common.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.symphonyoss.s2.common</groupId>
+      <artifactId>S2-common-crypto</artifactId>
+      <version>${s2.common.version}</version>
+    </dependency>
 		<dependency>
 			<groupId>org.symphonyoss.symphony</groupId>
 			<artifactId>jcurl</artifactId>

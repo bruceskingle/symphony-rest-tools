@@ -21,44 +21,24 @@
  * under the License.
  */
 
-package org.symphonyoss.symphony.tools.rest.model;
+package org.symphonyoss.symphony.tools.rest.ui.handlers;
 
-import java.io.File;
+import org.symphonyoss.symphony.tools.rest.SrtCommand;
+import org.symphonyoss.symphony.tools.rest.cert.find.FindCertificates;
+import org.symphonyoss.symphony.tools.rest.console.IConsole;
+import org.symphonyoss.symphony.tools.rest.util.home.ISrtHome;
 
-public class FileSystemModelObjectManager extends ModelObjectContainer
+/**
+ * Handler to launch the FindCertificates command.
+ * 
+ * @author bruce.skingle
+ *
+ */
+public class FindCertificatesHandler extends SrtCommandHandler
 {
-  private final File    configDir_;
-
-  public FileSystemModelObjectManager(IModelObjectContainer parent, String typeName, String name, File configDir)
+  @Override
+  protected SrtCommand createCommand(IConsole console, ISrtHome srtHome)
   {
-    super(parent, typeName, name);
-    configDir_ = configDir;
-  }
-
-  public File getConfigPath(String ...names)
-  {
-    File dir = configDir_;
-    
-    for(String name : names)
-      dir = new File(dir, name);
-    
-    return dir;
-  }
-
-  public File getConfigDir()
-  {
-    return configDir_;
-  }
-
-  protected void deleteRecursively(File f)
-  {
-    if(f.isDirectory())
-    {
-      for(File ff : f.listFiles())
-      {
-        deleteRecursively(ff);
-      }
-    }
-    f.delete();
+    return new FindCertificates(console, srtHome);
   }
 }

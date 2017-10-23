@@ -57,7 +57,7 @@ public class ModelObjectContainer extends ModelObject implements IModelObjectCon
     modelObjectStructureChanged(this);
   }
   
-  public void replaceChild(IModelObject oldChild, IModelObject newChild)
+  public void replaceChild(@Nullable IModelObject oldChild, IModelObject newChild)
   {
     if(newChild == null)
     {

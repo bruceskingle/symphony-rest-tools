@@ -281,6 +281,18 @@ public class ModelObject extends ComponentProxy implements IModelObject
     }
   }
   
+  protected static void putIfNotNull(ObjectNode jsonNode, String name, File value)
+  {
+    if(value == null)
+    {
+      jsonNode.remove(name);
+    }
+    else
+    {
+      jsonNode.put(name, value.getAbsolutePath());
+    }
+  }
+  
   protected static JsonNode getRequiredNode(JsonNode jsonNode, String name) throws InvalidConfigException
   {
     JsonNode node = jsonNode.get(name);
@@ -294,6 +306,22 @@ public class ModelObject extends ComponentProxy implements IModelObject
   protected static @Nonnull String getRequiredTextNode(JsonNode jsonNode, String name) throws InvalidConfigException
   {
     return getRequiredNode(jsonNode, name).asText();
+  }
+  
+  protected static @Nonnull boolean getRequiredBooleanNode(JsonNode jsonNode, String name) throws InvalidConfigException
+  {
+    return getRequiredNode(jsonNode, name).asBoolean();
+  }
+  
+  protected static @Nonnull File getRequiredFileNode(JsonNode jsonNode, String name, File base) throws InvalidConfigException
+  {
+    String fileName = getRequiredNode(jsonNode, name).asText();
+    File f = new File(fileName);
+    
+    if(f.isAbsolute())
+      return f;
+    
+    return new File(base, fileName);
   }
   
   protected static @Nonnull URL getRequiredUrlNode(JsonNode jsonNode, String name) throws InvalidConfigException

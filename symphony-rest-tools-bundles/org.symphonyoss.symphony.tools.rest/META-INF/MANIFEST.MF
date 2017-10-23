@@ -6,6 +6,7 @@ Bundle-Version: 0.1.7.qualifier
 Bundle-Vendor: Symphony Communication Services
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.symphonyoss.symphony.tools.rest,
+ org.symphonyoss.symphony.tools.rest.cert.find,
  org.symphonyoss.symphony.tools.rest.command,
  org.symphonyoss.symphony.tools.rest.console,
  org.symphonyoss.symphony.tools.rest.model,
@@ -18,10 +19,13 @@ Export-Package: org.symphonyoss.symphony.tools.rest,
 Import-Package: com.fasterxml.jackson.core,
  com.fasterxml.jackson.databind,
  com.fasterxml.jackson.databind.node,
+ com.symphony.s2.common.fault,
+ com.symphony.s2.common.type,
  javax.annotation,
  javax.annotation.concurrent,
  org.bouncycastle.cert,
  org.bouncycastle.cert.jcajce,
  org.bouncycastle.openssl,
  org.bouncycastle.openssl.jcajce,
+ org.symphonyoss.s2.common.cert,
  org.symphonyoss.symphony.jcurl

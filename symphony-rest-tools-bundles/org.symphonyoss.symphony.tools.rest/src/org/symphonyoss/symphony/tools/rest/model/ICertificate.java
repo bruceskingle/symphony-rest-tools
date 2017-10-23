@@ -23,42 +23,19 @@
 
 package org.symphonyoss.symphony.tools.rest.model;
 
-import java.io.File;
+import java.io.IOException;
 
-public class FileSystemModelObjectManager extends ModelObjectContainer
+public interface ICertificate extends IModelObject
 {
-  private final File    configDir_;
 
-  public FileSystemModelObjectManager(IModelObjectContainer parent, String typeName, String name, File configDir)
-  {
-    super(parent, typeName, name);
-    configDir_ = configDir;
-  }
+  ICertificateManager getManager();
 
-  public File getConfigPath(String ...names)
-  {
-    File dir = configDir_;
-    
-    for(String name : names)
-      dir = new File(dir, name);
-    
-    return dir;
-  }
+  String getSubjectName();
 
-  public File getConfigDir()
-  {
-    return configDir_;
-  }
+  String getIssuerName();
 
-  protected void deleteRecursively(File f)
-  {
-    if(f.isDirectory())
-    {
-      for(File ff : f.listFiles())
-      {
-        deleteRecursively(ff);
-      }
-    }
-    f.delete();
-  }
+  void save() throws IOException;
+
+  void delete() throws IOException;
+
 }

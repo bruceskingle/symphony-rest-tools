@@ -25,6 +25,7 @@ package org.symphonyoss.symphony.tools.rest.util.home;
 
 import java.io.File;
 
+import org.symphonyoss.symphony.tools.rest.model.ICertificateManager;
 import org.symphonyoss.symphony.tools.rest.model.IPodManager;
 
 public interface ISrtHome extends IDefaultsProvider
@@ -38,4 +39,6 @@ public interface ISrtHome extends IDefaultsProvider
   void saveSessionToken(String hostName, String tokenName, String token);
 
   IPodManager getPodManager();
+
+  ICertificateManager getCertificateManager();
 }

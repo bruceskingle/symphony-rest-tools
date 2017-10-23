@@ -214,16 +214,4 @@ public class PodManager extends FileSystemModelObjectManager implements IPodMana
     
     oldPod.modelUpdated(null);
   }
-
-  private void deleteRecursively(File f)
-  {
-    if(f.isDirectory())
-    {
-      for(File ff : f.listFiles())
-      {
-        deleteRecursively(ff);
-      }
-    }
-    f.delete();
-  }
 }

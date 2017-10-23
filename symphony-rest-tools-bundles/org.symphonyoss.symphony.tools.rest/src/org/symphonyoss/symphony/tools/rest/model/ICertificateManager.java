@@ -24,41 +24,27 @@
 package org.symphonyoss.symphony.tools.rest.model;
 
 import java.io.File;
+import java.io.IOException;
+import java.security.cert.X509Certificate;
+import java.util.Set;
 
-public class FileSystemModelObjectManager extends ModelObjectContainer
+import com.symphony.s2.common.exception.BadFormatException;
+
+public interface ICertificateManager extends IModelObjectContainer
 {
-  private final File    configDir_;
 
-  public FileSystemModelObjectManager(IModelObjectContainer parent, String typeName, String name, File configDir)
-  {
-    super(parent, typeName, name);
-    configDir_ = configDir;
-  }
+//  ICertificate createOrUpdateCertificate(Certificate.Builder podConfig, Agent.Builder agent) throws InvalidConfigException, IOException;
 
-  public File getConfigPath(String ...names)
-  {
-    File dir = configDir_;
-    
-    for(String name : names)
-      dir = new File(dir, name);
-    
-    return dir;
-  }
+  Set<ICertificate> getAll();
 
-  public File getConfigDir()
-  {
-    return configDir_;
-  }
+  int getSize();
 
-  protected void deleteRecursively(File f)
-  {
-    if(f.isDirectory())
-    {
-      for(File ff : f.listFiles())
-      {
-        deleteRecursively(ff);
-      }
-    }
-    f.delete();
-  }
+  void loadAll();
+
+  ICertificate save(ICertificate pod) throws IOException;
+
+  ICertificate getOrCreateCertificate(File file, String alias, X509Certificate x509Cert, boolean privateKeyEntry) throws BadFormatException, InvalidConfigException, IOException;
+
+  Certificate getCertificate(String fingerprint);
+
 }

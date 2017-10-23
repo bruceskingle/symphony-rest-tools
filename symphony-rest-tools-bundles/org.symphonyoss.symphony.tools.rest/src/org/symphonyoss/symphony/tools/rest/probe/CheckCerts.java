@@ -42,12 +42,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.net.ssl.SSLHandshakeException;
-import javax.security.auth.x500.X500Principal;
 
+import org.symphonyoss.s2.common.cert.CertificateUtils;
 import org.symphonyoss.symphony.jcurl.JCurl;
 import org.symphonyoss.symphony.jcurl.JCurl.Builder;
 import org.symphonyoss.symphony.jcurl.JCurl.HttpMethod;
@@ -286,7 +284,7 @@ public class CheckCerts extends SrtCommand
             printfln("%-20s is a Trusted Certificate", alias);
             X509Certificate x509Cert = (X509Certificate) cert;
             String dn = x509Cert.getSubjectX500Principal().getName();
-            String cn = getCommonName(x509Cert.getSubjectX500Principal());
+            String cn = CertificateUtils.getCommonName(x509Cert.getSubjectX500Principal());
             
             
             //        12345678901234567890 XXX
@@ -315,7 +313,7 @@ public class CheckCerts extends SrtCommand
               {
                 X509Certificate x509Cert = (X509Certificate) cert;
                 String dn = x509Cert.getSubjectX500Principal().getName();
-                String cn = getCommonName(x509Cert.getSubjectX500Principal());
+                String cn = CertificateUtils.getCommonName(x509Cert.getSubjectX500Principal());
                 
                 //        12345678901234567890 XXX
                 printfln("        cert[%02d] %-20s %s", i++, cn, dn);
@@ -356,8 +354,7 @@ public class CheckCerts extends SrtCommand
 
   private void validateCert(X509Certificate x509Cert, IObjective objective)
   {
-    String dn = x509Cert.getSubjectX500Principal().getName();
-    String cn = getCommonName(x509Cert.getSubjectX500Principal());
+    String cn = CertificateUtils.getCommonName(x509Cert.getSubjectX500Principal());
     
     validateCert(cn, x509Cert, objective);
   }
@@ -499,23 +496,5 @@ public class CheckCerts extends SrtCommand
     }
     
     
-  }
-  
-  private static String getCommonName(X500Principal principal)
-  {
-    // parse the CN out from the DN (distinguished name)
-    Pattern p = Pattern.compile("(^|,)CN=([^,]*)(,|$)");
-    Matcher m = p.matcher(principal.getName());
-
-    m.find();
-
-    try
-    {
-      return m.group(2);
-    }
-    catch(IllegalStateException e)
-    {
-      return principal.getName();
-    }
   }
 }
