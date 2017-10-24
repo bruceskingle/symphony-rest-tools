@@ -39,6 +39,7 @@ import java.util.EnumSet;
 import java.util.Properties;
 
 import org.symphonyoss.symphony.tools.rest.console.IConsole;
+import org.symphonyoss.symphony.tools.rest.model.ICertificateManager;
 import org.symphonyoss.symphony.tools.rest.model.IPodManager;
 import org.symphonyoss.symphony.tools.rest.model.PodManager;
 import org.symphonyoss.symphony.tools.rest.util.ProgramFault;
@@ -213,6 +214,13 @@ public class SrtHome implements ISrtHome
   public IPodManager getPodManager()
   {
     return podManager_;
+  }
+
+  @Override
+  public ICertificateManager getCertificateManager()
+  {
+    // TODO Auto-generated method stub
+    return null;
   }
 
   @Override

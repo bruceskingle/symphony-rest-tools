@@ -28,9 +28,9 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
-import com.symphony.s2.common.fault.CodingFault;
-import com.symphony.s2.common.type.IPersistentEnum;
-import com.symphony.s2.common.type.InvalidPersistentEnumException;
+import org.symphonyoss.s2.common.fault.CodingFault;
+import org.symphonyoss.s2.common.type.IPersistentEnum;
+import org.symphonyoss.s2.common.type.InvalidPersistentEnumException;
 
 public enum GeneralNameType implements IPersistentEnum
 {

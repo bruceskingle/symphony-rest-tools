@@ -45,7 +45,7 @@ import java.util.List;
 
 import javax.net.ssl.SSLHandshakeException;
 
-import org.symphonyoss.s2.common.cert.CertificateUtils;
+import org.symphonyoss.s2.common.crypto.cert.CertificateUtils;
 import org.symphonyoss.symphony.jcurl.JCurl;
 import org.symphonyoss.symphony.jcurl.JCurl.Builder;
 import org.symphonyoss.symphony.jcurl.JCurl.HttpMethod;

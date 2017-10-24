@@ -36,7 +36,7 @@ import org.symphonyoss.symphony.tools.rest.util.ProgramFault;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.symphony.s2.common.exception.BadFormatException;
+import org.symphonyoss.s2.common.exception.BadFormatException;
 
 public class CertificateManager extends FileSystemModelObjectManager implements ICertificateManager
 {

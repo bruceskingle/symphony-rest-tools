@@ -40,7 +40,7 @@ import org.junit.Test;
 import org.symphonyoss.s2.common.crypto.S2CommonCrypto;
 import org.symphonyoss.s2.common.crypto.cert.CertificateUtils;
 
-import com.symphony.s2.common.exception.BadFormatException;
+import org.symphonyoss.s2.common.exception.BadFormatException;
 
 public class CertificateTest
 {

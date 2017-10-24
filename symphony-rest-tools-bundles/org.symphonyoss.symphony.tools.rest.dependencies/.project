@@ -31,16 +31,4 @@
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>lib/S2-common-core-0.1.5-SNAPSHOT.jar</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/git/S2-common/S2-common-core/target/S2-common-core-0.1.5-SNAPSHOT.jar</locationURI>
-		</link>
-		<link>
-			<name>lib/S2-common-crypto-0.1.5-SNAPSHOT.jar</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/git/S2-common/S2-common-crypto/target/S2-common-crypto-0.1.5-SNAPSHOT.jar</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

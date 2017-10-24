@@ -39,8 +39,8 @@ import org.symphonyoss.symphony.tools.rest.ISrtSelectable;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.symphony.s2.common.exception.BadFormatException;
-import com.symphony.s2.common.type.InvalidPersistentEnumException;
+import org.symphonyoss.s2.common.exception.BadFormatException;
+import org.symphonyoss.s2.common.type.InvalidPersistentEnumException;
 
 public class Certificate extends ModelObjectContainer implements ICertificate, ISrtSelectable
 {

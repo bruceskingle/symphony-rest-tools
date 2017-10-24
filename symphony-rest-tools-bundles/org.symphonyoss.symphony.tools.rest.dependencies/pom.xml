@@ -9,7 +9,7 @@
   <packaging>eclipse-plugin</packaging>
   
   <properties>
-  		<s2.common.version>1.0.5-SNAPSHOT</s2.common.version>
+  		<s2.common.version>0.1.6-SNAPSHOT</s2.common.version>
   </properties>
   <dependencies>
 		<dependency>

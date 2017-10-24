@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.security.cert.X509Certificate;
 import java.util.Set;
 
-import com.symphony.s2.common.exception.BadFormatException;
+import org.symphonyoss.s2.common.exception.BadFormatException;
 
 public interface ICertificateManager extends IModelObjectContainer
 {
