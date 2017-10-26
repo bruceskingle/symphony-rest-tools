@@ -37,9 +37,8 @@ import java.util.List;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.symphonyoss.s2.common.crypto.S2CommonCrypto;
 import org.symphonyoss.s2.common.crypto.cert.CertificateUtils;
-
+import org.symphonyoss.s2.common.crypto.cipher.CipherSuite;
 import org.symphonyoss.s2.common.exception.BadFormatException;
 
 public class CertificateTest
@@ -70,7 +69,7 @@ public class CertificateTest
   @BeforeClass
   public static void init()
   {
-    S2CommonCrypto.init();
+    CipherSuite.getAsymmetricCipher(); // Has the side effect of loading BC.
   }
   
   @Test
