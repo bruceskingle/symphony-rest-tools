@@ -18,4 +18,6 @@ Require-Bundle: org.symphonyoss.symphony.tools.rest;bundle-version="0.1.2",
 Import-Package: com.fasterxml.jackson.core,
  com.fasterxml.jackson.databind,
  org.junit;version="4.12.0",
- org.symphonyoss.s2.common.crypto
+ org.symphonyoss.s2.common.crypto.cert,
+ org.symphonyoss.s2.common.crypto.cipher,
+ org.symphonyoss.s2.common.exception

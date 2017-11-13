@@ -6,7 +6,7 @@
  * Licensed to The Symphony Software Foundation (SSF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
+ * regarding copyright ownership.  The SSF licenses this file
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
@@ -66,6 +66,7 @@ public abstract class SrtCommand extends ConsoleDelegate
   
   /**
    * Create an instance with a Console connected to standard I/O.
+   * @param programName The name of the program or command.
    * 
    * @param argv Command line arguments.
    */

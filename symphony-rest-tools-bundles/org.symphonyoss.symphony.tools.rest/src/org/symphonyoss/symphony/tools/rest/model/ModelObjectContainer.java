@@ -140,6 +140,7 @@ public class ModelObjectContainer extends ModelObject implements IModelObjectCon
    * Adds a URL endpoint child ONLY IF THE NAME IS NON-NULL
    * @param typeName  Type of the child
    * @param name      Name of the child
+   * @param url       URL of the new endpoint
    */
   public void addUrlEndpoint(String typeName, String name, URL url)
   {

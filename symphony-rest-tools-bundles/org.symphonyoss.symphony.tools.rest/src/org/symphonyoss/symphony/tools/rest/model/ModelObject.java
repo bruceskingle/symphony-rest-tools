@@ -6,7 +6,7 @@
  * Licensed to The Symphony Software Foundation (SSF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
+ * regarding copyright ownership.  The SSF licenses this file
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
@@ -64,9 +64,9 @@ public class ModelObject extends ComponentProxy implements IModelObject
    * Intended for virtual model objects which do no have persisted state.
    * For real model objects the other constructor should be used.
    * 
-   * @param parent
-   * @param typeName
-   * @param name
+   * @param parent    The parent object of this one.
+   * @param typeName  The type name of the new object, used for selecting icons in the GUI.
+   * @param name      The name of the new object.
    */
   public ModelObject(IModelObjectContainer parent, String typeName, String name)
   {
@@ -258,9 +258,9 @@ public class ModelObject extends ComponentProxy implements IModelObject
   /**
    * This object has been replaced with the given one.
    * 
-   * @param newPod
+   * @param modelObject The new instance which replaces the current one
    */
-  public void modelUpdated(ModelObject newPod)
+  public void modelUpdated(ModelObject modelObject)
   {
   }
 
